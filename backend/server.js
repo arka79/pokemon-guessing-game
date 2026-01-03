@@ -35,7 +35,7 @@ app.get ('/api/new-pokemon', async (req , res) => {
         res.status(500).json({ error: 'Failed to fetch pokemon data' });
     }
 });
- 
-  app.listen(3000, () => {
+
+  app.listen(3000, '0.0.0.0', () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
