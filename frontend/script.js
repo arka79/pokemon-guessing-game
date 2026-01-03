@@ -10,7 +10,7 @@ async function loadNewQuestion() {
     });
 
     try {
-        const response = await fetch('http://localhost:3000/api/new-pokemon');
+        const response = await fetch('https://localhost:3000/api/new-pokemon');
         const data = await response.json();
 
         correctPokemon = data.name;
