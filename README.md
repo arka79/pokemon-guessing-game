@@ -23,11 +23,11 @@ A full-stack "Who's That Pokémon?" web application. This project uses a **Node.
 ## 📂 Project Structure
 ```text
 pokemon-game/
-├── client/                # Frontend UI
+├── frontend/                # Frontend UI
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-├── server/                # Backend API
+├── backend/                # Backend API
 │   ├── server.js
 │   ├── .env               # Environment variables
 │   └── package.json
