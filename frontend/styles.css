@@ -5,27 +5,19 @@ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:
     
    
     #pokemon-image { 
-        width: 250px; 
-        height: 250px; 
-        filter: brightness(0); 
-        transition: filter 0.3s ease-in-out;
+        width: 250px;
+    height: 250px;
+    filter: brightness(0);
+    transition: filter 0.4s ease-in-out;
     }
     h1 { margin-bottom: 10px; }
 
 
 
-    #pokemon-image.reveal { filter: brightness(1); }
+    #pokemon-image.revealed { filter: brightness(1.4) !important; }
 
     .options-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-    #new-pokemon-btn {
-        margin-top: 20px; 
-        padding: 10px 20px; 
-        font-size: 1rem; 
-        cursor: pointer; 
-        border: 2px solid #333; 
-        border-radius: 10px; 
-        background: #fff;
-    }
+ 
     #new-pokemon-btn:hover { background: #f0f0f0; }
     .option-button { 
         padding: 15px; 

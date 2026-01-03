@@ -18,9 +18,16 @@ app.get ('/api/new-pokemon', async (req , res) => {
         const id = await random_pokemon();
         const response  = await axios.get(`${POKEAPI_URL}/${id}`);
         const pokemonData = response.data;
+        const options = [];
+        while (options.length < 3) {
+            const optionId = await random_pokemon();
+            const optionResponse = await axios.get(`${POKEAPI_URL}/${optionId}`);
+            options.push(optionResponse.data.name);
+        }
         res.json({
             name: pokemonData.name,
-            image: pokemonData.sprites.front_default
+            image: pokemonData.sprites.front_default,
+            options: [...options, pokemonData.name].sort(() => Math.random() - 0.5) 
         });
     }
      catch (error){
