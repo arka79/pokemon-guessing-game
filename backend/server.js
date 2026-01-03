@@ -10,13 +10,13 @@ dotenv.config();
 app.use(cors());
 
 const POKEAPI_LIMIT = 1025; 
-
+const POKEAPI_URL = process.env.URL;
 const random_pokemon = async ()=> Math.floor(Math.random()* POKEAPI_LIMIT )+1;
 
 app.get ('/api/new-pokemon', async (req , res) => {
     try{
         const id = await random_pokemon();
-        const response  = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        const response  = await axios.get(`${POKEAPI_URL}/${id}`);
         const pokemonData = response.data;
         res.json({
             name: pokemonData.name,
